@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arnur | blue & pink story</title>
+    <style>
+        /* ========== RESET & VARIABLES ========== */
+        :root {
+            --blue-deep: #0a1928;
+            --blue-navy: #1e3a5f;
+            --blue-royal: #2b4b73;
+            --blue-sky: #7fa9c7;
+            --blue-mist: #b8d4e7;
+            --blue-ice: #d9ecff;
+            --pink-deep: #b2406c;
+            --pink-rose: #d46b8f;
+            --pink-blush: #f7b2c4;
+            --pink-soft: #ffd9e4;
+            --pink-petal: #ffe4ec;
+            --gold: #c9b27c;
+            --white: #ffffff;
+            --white-soft: #f8f4ff;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-deep: rgba(0, 0, 0, 0.2);
+            --shadow-pink: rgba(180, 70, 120, 0.2);
+            --shadow-blue: rgba(30, 58, 95, 0.3);
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-dark: rgba(10, 25, 40, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ========== FONTS ========== */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+        /* ========== BASE STYLES ========== */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(145deg, var(--blue-navy) 0%, var(--blue-royal) 30%, var(--pink-rose) 70%, var(--pink-blush) 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: var(--white);
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255, 210, 230, 0.1) 0%, transparent 30%),
+                        radial-gradient(circle at 80% 70%, rgba(180, 210, 240, 0.1) 0%, transparent 40%),
+                        repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 8px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ========== CUSTOM SCROLLBAR ========== */
+        ::-webkit-scrollbar {
+            width: 14px;
+            background: linear-gradient(180deg, var(--blue-navy), var(--pink-rose));
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--pink-blush), var(--blue-sky));
+            border-radius: 20px;
+            border: 3px solid var(--white-soft);
+            box-shadow: 0 0 15px var(--pink-rose);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--pink-rose), var(--blue-royal));
+        }
+
+        /* ========== FLOATING ORNAMENTS ========== */
+        .floating-ornaments {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .ornament {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.1);
+            animation: floatOrnament 20s linear infinite;
+            user-select: none;
+        }
+
+        .ornament:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .ornament:nth-child(2) { top: 20%; right: 10%; animation-delay: 3s; }
+        .ornament:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 6s; }
+        .ornament:nth-child(4) { bottom: 10%; right: 20%; animation-delay: 9s; }
+        .ornament:nth-child(5) { top: 50%; left: 30%; animation-delay: 12s; }
+        .ornament:nth-child(6) { top: 80%; right: 30%; animation-delay: 15s; }
+        .ornament:nth-child(7) { top: 40%; left: 80%; animation-delay: 18s; }
+        .ornament:nth-child(8) { bottom: 60%; right: 5%; animation-delay: 21s; }
+        .ornament:nth-child(9) { top: 15%; left: 60%; animation-delay: 24s; }
+        .ornament:nth-child(10) { bottom: 45%; right: 45%; animation-delay: 27s; }
+        .ornament:nth-child(11) { top: 70%; left: 40%; animation-delay: 30s; }
+        .ornament:nth-child(12) { bottom: 80%; right: 70%; animation-delay: 33s; }
+
+        @keyframes floatOrnament {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 0.1;
+            }
+            25% {
+                transform: translate(20px, -20px) rotate(90deg) scale(1.2);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translate(40px, 20px) rotate(180deg) scale(1);
+                opacity: 0.15;
+            }
+            75% {
+                transform: translate(10px, 30px) rotate(270deg) scale(0.9);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg) scale(1);
+                opacity: 0.1;
+            }
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ========== GLASS CARD EFFECT ========== */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 35px 60px -15px var(--shadow-blue),
+                        0 0 30px rgba(255, 180, 200, 0.3);
+            transform: translateY(-5px);
+        }
+
+        /* ========== HEADER SECTION ========== */
+        .header-section {
+            text-align: center;
+            padding: 80px 50px 60px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: rotateBg 30s linear infinite;
+        }
+
+        @keyframes rotateBg {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .name-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--white) 0%, var(--pink-petal) 30%, var(--blue-ice) 70%, var(--white) 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 8s ease infinite;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            position: relative;
+            line-height: 1.1;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .subtitle {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            color: var(--white-soft);
+            text-shadow: 0 0 20px var(--pink-blush), 0 0 40px var(--blue-sky);
+            margin-bottom: 30px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .badge {
+            padding: 12px 35px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .badge:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+            border-color: var(--pink-blush);
+        }
+
+        .badge i {
+            margin-right: 10px;
+            color: var(--pink-blush);
+        }
+
+        /* ========== PROFILE SECTION ========== */
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .profile-card {
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .profile-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--pink-rose), var(--blue-royal));
+            border-radius: 30px 30px 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 30px var(--shadow-pink);
+            transform: rotate(5deg);
+            transition: all 0.3s;
+        }
+
+        .profile-card:hover .profile-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .profile-card h3 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, var(--white), var(--pink-petal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-card p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--pink-soft), var(--blue-ice));
+            padding: 20px 25px;
+            border-radius: 30px;
+            color: var(--blue-navy);
+            font-weight: 600;
+            margin-top: 20px;
+            border: 1px solid white;
+        }
+
+        /* ========== TIMELINE SECTION ========== */
+        .timeline-section {
+            margin-bottom: 80px;
+            padding: 60px 50px;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--pink-petal), var(--blue-ice));
+            padding: 0 30px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--pink-blush), transparent);
+        }
+
+        .section-title::before { left: 0; }
+        .section-title::after { right: 0; }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-radius: 40px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-15px);
+            border-color: var(--pink-blush);
+            box-shadow: 0 30px 50px -20px var(--pink-rose);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--pink-rose), var(--blue-royal));
+        }
+
+        .timeline-year {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--pink-blush), var(--blue-sky));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timeline-icon {
+            font-size: 3rem;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .timeline-desc {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: white;
+        }
+
+        .timeline-desc small {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+
+        /* ========== GALLERY SECTION ========== */
+        .gallery-section {
+            margin-bottom: 80px;
+            padding: 50px;
+        }
+
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--pink-rose), var(--blue-royal));
+            border-color: white;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
+            transition: all 0.5s;
+            aspect-ratio: 1/1;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02) translateY(-5px);
+            border-color: var(--pink-blush);
+            box-shadow: 0 30px 50px -10px var(--pink-rose);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(30, 58, 95, 0.9), transparent);
+            padding: 30px 20px 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* ========== QUOTES SECTION ========== */
+        .quotes-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .quote-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: all 0.4s;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--pink-blush);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--pink-blush);
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--white-soft);
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            color: var(--pink-petal);
+            font-weight: 600;
+        }
+
+        /* ========== STATS SECTION ========== */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(180, 70, 120, 0.2), rgba(30, 58, 95, 0.2));
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 35px 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+            border-color: var(--pink-blush);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--pink-petal), var(--blue-ice));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ========== MEMORY CARDS ========== */
+        .memory-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .memory-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: 50px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .memory-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--pink-blush);
+        }
+
+        .memory-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .memory-card:hover::before {
+            opacity: 1;
+        }
+
+        .memory-date {
+            font-size: 1.2rem;
+            color: var(--pink-blush);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .memory-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .memory-desc {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+        }
+
+        .memory-tags {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .memory-tag {
+            padding: 6px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ========== MUSIC PLAYER ========== */
+        .music-section {
+            padding: 50px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .music-player-ui {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .music-cover {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--pink-rose), var(--blue-royal));
+            border-radius: 40px 40px 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            animation: pulse 2s infinite;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: rotate(5deg);
+        }
+
+        .music-controls {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .music-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .music-btn:hover {
+            background: linear-gradient(135deg, var(--pink-rose), var(--blue-royal));
+            transform: scale(1.1);
+            border-color: white;
+        }
+
+        .music-progress {
+            width: 300px;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--pink-blush), var(--blue-sky));
+            transition: width 0.1s linear;
+        }
+
+        .music-title {
+            font-size: 1.4rem;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        /* ========== MESSAGE BOARD ========== */
+        .message-section {
+            padding: 60px 50px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .message-form {
+            max-width: 700px;
+            margin: 40px auto 0;
+        }
+
+        .message-input {
+            width: 100%;
+            padding: 20px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 60px;
+            font-size: 1.1rem;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+
+        .message-input:focus {
+            outline: none;
+            border-color: var(--pink-blush);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(255, 180, 200, 0.3);
+        }
+
+        .message-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .message-submit {
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--pink-rose), var(--blue-royal));
+            border: none;
+            border-radius: 60px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .message-submit:hover {
+            transform: scale(1.05);
+            border-color: white;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+        }
+
+        .message-list {
+            margin-top: 50px;
+            text-align: left;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 40px;
+        }
+
+        .message-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--pink-blush);
+            transition: all 0.3s;
+        }
+
+        .message-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(10px);
+        }
+
+        .message-author {
+            font-weight: 600;
+            color: var(--pink-blush);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .message-content {
+            color: white;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .message-time {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 8px;
+            text-align: right;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 60px 40px 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        .footer-heart {
+            font-size: 3rem;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            35% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            55% { transform: scale(1); }
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--pink-rose), var(--blue-royal));
+            transform: translateY(-3px);
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+        }
+
+        /* ========== MODAL ========== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 40, 0.97);
+            backdrop-filter: blur(20px);
+            cursor: pointer;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 50px;
+            border: 8px solid transparent;
+            background: linear-gradient(135deg, var(--pink-rose), var(--blue-royal)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            padding: 8px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 45px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: white;
+            font-size: 70px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1001;
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        .modal-close:hover {
+            background: var(--pink-rose);
+            transform: rotate(180deg);
+        }
+
+        /* ========== LOADING ANIMATION ========== */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--blue-navy);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+
+        .loading-spinner {
+            width: 100px;
+            height: 100px;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--pink-blush);
+            border-right-color: var(--blue-sky);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ========== TOOLTIP ========== */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--pink-rose), var(--blue-royal));
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            z-index: 100;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1200px) {
+            .name-title { font-size: 6rem; }
+            .timeline-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-section { grid-template-columns: repeat(2, 1fr); }
+            .quotes-section { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 992px) {
+            .profile-section { grid-template-columns: 1fr; }
+            .memory-section { grid-template-columns: 1fr; }
+            .section-title { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .main-container { padding: 20px; }
+            .name-title { font-size: 4rem; }
+            .subtitle { font-size: 1.5rem; }
+            .timeline-grid { grid-template-columns: 1fr; }
+            .stats-section { grid-template-columns: 1fr; }
+            .quotes-section { grid-template-columns: 1fr; }
+            .badge-container { flex-direction: column; align-items: center; }
+            .badge { width: 100%; text-align: center; }
+            .modal-close { top: 20px; right: 20px; width: 60px; height: 60px; font-size: 30px; }
+        }
+
+        @media (max-width: 480px) {
+            .name-title { font-size: 3rem; }
+            .section-title { font-size: 2rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- loading animation -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- floating ornaments -->
+    <div class="floating-ornaments">
+        <div class="ornament">🌸</div>
+        <div class="ornament">✨</div>
+        <div class="ornament">💫</div>
+        <div class="ornament">🌺</div>
+        <div class="ornament">🫧</div>
+        <div class="ornament">🌀</div>
+        <div class="ornament">💮</div>
+        <div class="ornament">🪷</div>
+        <div class="ornament">🌊</div>
+        <div class="ornament">🫧</div>
+        <div class="ornament">🌸</div>
+        <div class="ornament">✨</div>
+    </div>
+
+    <!-- modal for gallery -->
+    <div class="modal" id="galleryModal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-content" id="modalContent">
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <!-- main container -->
+    <div class="main-container">
+        <!-- header section -->
+        <header class="header-section glass-card">
+            <h1 class="name-title">ARNUR</h1>
+            <p class="subtitle">a story of blue & pink</p>
+            <div class="badge-container">
+                <span class="badge"><i>💙</i> blue dreams</span>
+                <span class="badge"><i>🩷</i> pink memories</span>
+                <span class="badge"><i>🤍</i> pure heart</span>
+                <span class="badge"><i>✨</i> starlight</span>
+            </div>
+        </header>
+
+        <!-- profile section -->
+        <section class="profile-section">
+            <div class="profile-card glass-card">
+                <div class="profile-icon">💙</div>
+                <h3>the blue side</h3>
+                <p>Deep as the ocean, calm as the night sky. Arnur's blue side represents wisdom, loyalty, and the peaceful moments that make hearts feel at home. Like the endless horizon where sea meets sky, this part of her is infinite and beautiful.</p>
+                <div class="highlight-text">"still waters run deep, and so does her soul"</div>
+            </div>
+            <div class="profile-card glass-card">
+                <div class="profile-icon">🩷</div>
+                <h3>the pink side</h3>
+                <p>Warm as sunrise, sweet as cherry blossoms. Arnur's pink side embodies love, kindness, and the gentle laughter that lights up every room. Like petals dancing in spring breeze, this part of her is soft yet vibrant.</p>
+                <div class="highlight-text">"in a world of roses, she's a whole garden"</div>
+            </div>
+        </section>
+
+        <!-- timeline section -->
+        <section class="timeline-section glass-card">
+            <h2 class="section-title"><span>✨ journey through time ✨</span></h2>
+            <div class="timeline-grid" id="timelineGrid"></div>
+        </section>
+
+        <!-- gallery section -->
+        <section class="gallery-section glass-card">
+            <h2 class="section-title"><span>🌸 precious moments 🌸</span></h2>
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">all</button>
+                <button class="filter-btn" data-filter="blue">blue moments</button>
+                <button class="filter-btn" data-filter="pink">pink moments</button>
+                <button class="filter-btn" data-filter="special">special</button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </section>
+
+        <!-- quotes section -->
+        <section class="quotes-section" id="quotesSection"></section>
+
+        <!-- stats section -->
+        <section class="stats-section" id="statsSection"></section>
+
+        <!-- memory cards -->
+        <section class="memory-section" id="memorySection"></section>
+
+        <!-- music player -->
+        <section class="music-section glass-card">
+            <h2 class="section-title"><span>🎵 melodies for arnur 🎵</span></h2>
+            <div class="music-player-ui">
+                <div class="music-cover">🎵</div>
+                <div style="flex:1;">
+                    <div class="music-title" id="musicTitle">blue & pink symphony</div>
+                    <div class="music-progress">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="music-controls">
+                        <button class="music-btn" onclick="prevTrack()">⏮️</button>
+                        <button class="music-btn" onclick="playPause()" id="playPauseBtn">▶️</button>
+                        <button class="music-btn" onclick="nextTrack()">⏭️</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- message board -->
+        <section class="message-section glass-card">
+            <h2 class="section-title"><span>💌 leave a message 💌</span></h2>
+            <div class="message-form">
+                <input type="text" class="message-input" id="messageInput" placeholder="write something for arnur...">
+                <button class="message-submit" onclick="sendMessage()">send with love 🩷</button>
+            </div>
+            <div class="message-list" id="messageList"></div>
+        </section>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer-heart">🤍</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">blue stories</a>
+                <a href="#" class="footer-link">pink memories</a>
+                <a href="#" class="footer-link">our moments</a>
+                <a href="#" class="footer-link">forever arnur</a>
+            </div>
+            <div class="footer-copyright">
+                <p>created with the perfect blend of blue & pink 🤍</p>
+                <p style="margin-top: 15px;">for arnur, from someone who sees both colors in you</p>
+                <p style="margin-top: 30px; font-size: 0.8rem;">© 2026 | blue & pink story</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // ========== DATA ARNUR ==========
+        const arnurData = {
+            timeline: [
+                { year: '2018', icon: '🌸', desc: 'first meeting', detail: 'when blue met pink' },
+                { year: '2020', icon: '💫', desc: 'growing together', detail: 'shared dreams' },
+                { year: '2023', icon: '✨', desc: 'precious moments', detail: 'countless memories' },
+                { year: '2026', icon: '🩷', desc: 'forever begins', detail: 'blue & pink story' }
+            ],
+            quotes: [
+                { text: 'she is a mix of blue calm and pink warmth, perfectly balanced', author: 'heart' },
+                { text: 'in a world of colors, she chose to be both the sky and the sunset', author: 'soul' },
+                { text: 'arnur - where serenity meets sweetness', author: 'destiny' }
+            ],
+            stats: [
+                { number: '∞', label: 'beautiful moments' },
+                { number: '💙', label: 'blue memories' },
+                { number: '🩷', label: 'pink memories' },
+                { number: '✨', label: 'special days' }
+            ],
+            memories: [
+                { date: 'spring 2023', title: 'cherry blossom day', desc: 'when pink petals rained like her laughter', tags: ['pink', 'spring', 'joy'] },
+                { date: 'summer 2024', title: 'ocean whispers', desc: 'blue waves told secrets only we know', tags: ['blue', 'summer', 'peace'] }
+            ],
+            gallery: [
+                { url: 'https://files.catbox.moe/rioxl2.jpg', category: 'pink', caption: 'pink dreams', desc: 'soft as cherry blossoms' },
+                { url: 'https://files.catbox.moe/um3968.jpg', category: 'blue', caption: 'blue serenity', desc: 'deep as the ocean' },
+                { url: 'https://files.catbox.moe/t82wv8.jpg', category: 'special', caption: 'special moment', desc: 'when blue met pink' },
+                { url: 'https://files.catbox.moe/lop7lw.jpg', category: 'pink', caption: 'pink warmth', desc: 'sweet as sunrise' },
+                { url: 'https://files.catbox.moe/3bfj9e.jpg', category: 'blue', caption: 'blue calm', desc: 'peaceful as night sky' },
+                { url: 'https://files.catbox.moe/rioxl2.jpg', category: 'special', caption: 'perfect blend', desc: 'blue & pink harmony' }
+            ],
+            messages: [
+                { author: '💙', text: 'you are my favorite shade of blue', time: 'just now' },
+                { author: '🩷', text: 'pink looks better when shared with you', time: '2 min ago' },
+                { author: '🤍', text: 'blue and pink, but you make them both white', time: '5 min ago' }
+            ]
+        };
+
+        // ========== INITIALIZE ALL SECTIONS ==========
+        function initializeArnur() {
+            createTimeline();
+            createQuotes();
+            createStats();
+            createMemories();
+            createGallery();
+            createMessages();
+            setTimeout(() => {
+                document.getElementById('loading').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loading').style.display = 'none';
+                }, 500);
+            }, 1500);
+        }
+
+        // timeline
+        function createTimeline() {
+            const grid = document.getElementById('timelineGrid');
+            arnurData.timeline.forEach(item => {
+                grid.innerHTML += `
+                    <div class="timeline-item">
+                        <div class="timeline-year">${item.year}</div>
+                        <div class="timeline-icon">${item.icon}</div>
+                        <div class="timeline-desc">
+                            ${item.desc}
+                            <small>${item.detail}</small>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // quotes
+        function createQuotes() {
+            const section = document.getElementById('quotesSection');
+            arnurData.quotes.forEach(quote => {
+                section.innerHTML += `
+                    <div class="quote-card">
+                        <div class="quote-icon">💭</div>
+                        <div class="quote-text">"${quote.text}"</div>
+                        <div class="quote-author">— ${quote.author}</div>
+                    </div>
+                `;
+            });
+        }
+
+        // stats
+        function createStats() {
+            const section = document.getElementById('statsSection');
+            arnurData.stats.forEach(stat => {
+                section.innerHTML += `
+                    <div class="stat-card">
+                        <div class="stat-number">${stat.number}</div>
+                        <div class="stat-label">${stat.label}</div>
+                    </div>
+                `;
+            });
+        }
+
+        // memories
+        function createMemories() {
+            const section = document.getElementById('memorySection');
+            arnurData.memories.forEach(memory => {
+                section.innerHTML += `
+                    <div class="memory-card">
+                        <div class="memory-date">📅 ${memory.date}</div>
+                        <div class="memory-title">${memory.title}</div>
+                        <div class="memory-desc">${memory.desc}</div>
+                        <div class="memory-tags">
+                            ${memory.tags.map(tag => `<span class="memory-tag">#${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // gallery
+        function createGallery() {
+            const grid = document.getElementById('galleryGrid');
+            arnurData.gallery.forEach((photo, index) => {
+                grid.innerHTML += `
+                    <div class="gallery-item" data-category="${photo.category}" onclick="openModal('${photo.url}', '${photo.caption}', '${photo.desc}')">
+                        <img src="${photo.url}" alt="${photo.caption}" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h4>${photo.caption}</h4>
+                            <p>${photo.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // messages
+        function createMessages() {
+            const list = document.getElementById('messageList');
+            arnurData.messages.forEach(msg => {
+                list.innerHTML += `
+                    <div class="message-item">
+                        <div class="message-author">${msg.author}</div>
+                        <div class="message-content">${msg.text}</div>
+                        <div class="message-time">${msg.time}</div>
+                    </div>
+                `;
+            });
+        }
+
+        // ========== GALLERY FILTER ==========
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                const items = document.querySelectorAll('.gallery-item');
+                
+                items.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ========== MODAL FUNCTIONS ==========
+        function openModal(imgSrc, caption, desc) {
+            const modal = document.getElementById('galleryModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imgSrc;
+            modalImg.alt = caption;
+        }
+
+        function closeModal() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        // ========== MUSIC PLAYER ==========
+        const tracks = [
+            { title: 'blue & pink symphony', file: 'https://files.catbox.moe/3zr2db.m4a' },
+            { title: 'arnur waltz', file: 'https://files.catbox.moe/3zr2db.m4a' },
+            { title: 'forever blend', file: 'https://files.catbox.moe/3zr2db.m4a' }
+        ];
+        
+        let currentTrack = 0;
+        let isPlaying = false;
+        const audio = new Audio();
+        
+        function loadTrack(index) {
+            audio.src = tracks[index].file;
+            document.getElementById('musicTitle').textContent = tracks[index].title;
+            audio.load();
+        }
+        
+        function playPause() {
+            const btn = document.getElementById('playPauseBtn');
+            if (isPlaying) {
+                audio.pause();
+                btn.textContent = '▶️';
+            } else {
+                audio.play();
+                btn.textContent = '⏸️';
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        function nextTrack() {
+            currentTrack = (currentTrack + 1) % tracks.length;
+            loadTrack(currentTrack);
+            if (isPlaying) audio.play();
+        }
+        
+        function prevTrack() {
+            currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+            loadTrack(currentTrack);
+            if (isPlaying) audio.play();
+        }
+        
+        audio.addEventListener('timeupdate', function() {
+            const progress = (audio.currentTime / audio.duration) * 100 || 0;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+        
+        audio.addEventListener('ended', nextTrack);
+        
+        loadTrack(0);
+
+        // ========== SEND MESSAGE ==========
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                const list = document.getElementById('messageList');
+                const now = new Date();
+                const timeStr = now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
+                
+                list.innerHTML += `
+                    <div class="message-item" style="border-left-color: var(--pink-rose);">
+                        <div class="message-author">🤍 you</div>
+                        <div class="message-content">${message}</div>
+                        <div class="message-time">just now</div>
+                    </div>
+                `;
+                
+                input.value = '';
+                
+                // scroll to bottom
+                list.scrollTop = list.scrollHeight;
+            }
+        }
+
+        // ========== CLOSE MODAL WITH ESC ==========
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // ========== INITIALIZE ==========
+        window.onload = initializeArnur;
+
+        // ========== TOOLTIPS ==========
+        document.querySelectorAll('[data-tooltip]').forEach(el => {
+            el.classList.add('tooltip');
+        });
+    </script>
+</body>
+</html>
